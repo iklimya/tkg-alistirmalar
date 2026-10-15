@@ -2,15 +2,14 @@
 #
 # Aşağıda örnek olarak bir test var. Yanına her fonksiyon için kendi testlerinizi ekleyin.
 # Çalıştırmak için bu klasörde:  python -m pytest -v
-
 import pytest
 
-from alistirma import kargo_ucreti, bilet_fiyat, ortalama
+from alistirma import kargo_ucreti, bilet_fiyati, ortalama
 
 
 def test_kargo_buyuk_sipariste_ucretsiz():
     assert kargo_ucreti(800) == 0
-# kargo_ucreti
+
 def test_kargo_kucuk_siparis():
     assert kargo_ucreti(100) == 50
 
@@ -31,7 +30,6 @@ def test_kargo_negatif_hata():
         kargo_ucreti(-1)
 
 
-# bilet_fiyati
 def test_bilet_sifir_yas():
     assert bilet_fiyati(0) == 0
 
@@ -61,7 +59,6 @@ def test_bilet_negatif_hata():
         bilet_fiyati(-1)
 
 
-# ortalama
 def test_ortalama_normal():
     assert ortalama([70, 85]) == 77.5
 
